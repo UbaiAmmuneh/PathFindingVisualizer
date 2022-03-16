@@ -1,0 +1,105 @@
+body {
+	margin: 0;
+	font-family: "Lato", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 18px;
+	line-height: 1.72222;
+	color: #34495e;
+	background-color: #ffffff;
+}
+
+@mixin tile_background($path) {
+	background-image: url("../public/images/#{$path}");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: white;
+}
+
+@mixin animated_tile($animation-name: pop-animation, $duration: 0.3s) {
+	animation-name: $animation-name;
+	animation-duration: $duration;
+	animation-timing-function: ease-out;
+	animation-delay: 0s;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+.unvisited-tile {
+	background-color: white;
+	border: 1px solid rgb(175, 216, 248);
+}
+
+.tile {
+	@extend .unvisited-tile;
+
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+
+.start-tile {
+	@include tile_background("start_tile.svg");
+	@include animated_tile();
+}
+
+.target-tile {
+	@include tile_background("target_tile.svg");
+	@include animated_tile();
+}
+
+.weight-tile {
+	@include tile_background("weight_tile.svg");
+	@include animated_tile();
+}
+
+.visited-tile {
+	@extend .unvisited-tile;
+	@include animated_tile(visited-animation, 1.5s);
+}
+
+.path-tile {
+	@extend .unvisited-tile;
+	@include animated_tile();
+	background-color: rgb(255, 254, 106);
+}
+
+.wall-tile {
+	@extend .unvisited-tile;
+	//@include animated_tile();
+	background-color: rgb(12, 53, 71);
+}
+
+@keyframes pop-animation {
+	0% {
+		transform: scale(0.3);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes visited-animation {
+	0% {
+		transform: scale(0.3);
+		border-radius: 100%;
+		background-color: rgba(0, 0, 66, 0.75);
+	}
+	50% {
+		background-color: rgba(17, 104, 217, 0.75);
+	}
+	75% {
+		transform: scale(1.2);
+		background-color: rgba(0, 217, 159, 0.75);
+	}
+	100% {
+		transform: scale(1);
+		background-color: rgba(0, 190, 218, 0.75);
+	}
+}

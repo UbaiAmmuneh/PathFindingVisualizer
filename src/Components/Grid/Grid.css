@@ -1,0 +1,13 @@
+.grid {
+	margin: 20px 0 0;
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}
+
+.tiles-row {
+	display: flex;
+	justify-content: center;
+}

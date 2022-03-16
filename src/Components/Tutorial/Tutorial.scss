@@ -1,0 +1,128 @@
+.tutorial {
+	position: absolute;
+	z-index: 3;
+	background-color: rgba(255, 255, 255, 1);
+	width: 50%;
+	height: 70%;
+	border: 2px solid #34495e;
+	border-radius: 4px;
+	text-align: center;
+	float: right;
+	margin: auto;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	color: rgb(52, 73, 94);
+
+	&::after,
+	&::before {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.pageCounter {
+		display: inline-block;
+		margin: 15px;
+		font-weight: 700;
+	}
+
+	a {
+		color: #1abc9c;
+		text-decoration: none;
+
+		&:hover {
+			color: rgb(72, 201, 176);
+		}
+	}
+
+	h3 {
+		margin-top: 0;
+		margin-bottom: 15px;
+		font-size: 40px;
+		font-family: inherit;
+		font-weight: 700;
+		line-height: 1.1;
+		color: inherit;
+		padding-bottom: 5px;
+	}
+
+	h6 {
+		padding: 5px 20px 5px 20px;
+		font-size: 24px;
+		font-weight: normal;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	p {
+		padding: 5px 20px 5px 20px;
+		font-size: 18px;
+		line-height: 1.72222;
+		margin: 0 0 15px;
+	}
+
+	img {
+		width: 25%;
+		padding-top: 5px;
+
+		&.large {
+			width: 40%;
+		}
+
+		&.larger {
+			width: 53%;
+		}
+
+		&.largest {
+			width: 95%;
+			margin-top: 20px;
+			height: 9%;
+		}
+	}
+
+	ul {
+		margin-top: 0;
+
+		li {
+			list-style: none;
+			padding-bottom: 20px;
+			padding-right: 40px;
+			font-size: 16px;
+		}
+	}
+
+	button {
+		margin-top: 6px;
+		margin-bottom: 6px;
+		color: #ffffff;
+		background-color: #1abc9c;
+		position: absolute;
+
+		&:hover {
+			background-color: rgb(72, 201, 176);
+			color: #ffffff;
+		}
+
+		&.skipButton {
+			left: 2%;
+			bottom: 2%;
+		}
+
+		&.previousButton {
+			right: 12%;
+			bottom: 2%;
+		}
+
+		&.previousButton2 {
+			right: 20%;
+			bottom: 2%;
+		}
+
+		&.nextButton {
+			right: 2%;
+			bottom: 2%;
+		}
+	}
+}
